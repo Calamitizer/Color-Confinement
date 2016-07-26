@@ -1,21 +1,40 @@
 {
-  "name": "phonegap-template-blank",
-  "version": "1.1.0",
-  "description": "blank template for phonegap and cordova projects",
+  "name": "color-confinement",
+  "version": "0.0.1",
+  "description": "A abstract mobile game about color and a lack thereof.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phonegap/phonegap-app-blank.git"
+    "url": "git+https://github.com/calamitizer/color-confinement.git"
   },
   "keywords": [
-    "ecosystem:phonegap",
-    "ecosystem:cordova",
-    "cordova:template",
-    "phonegap:template"
+   "later" 
   ],
-  "author": "PhoneGap Team",
-  "license": "Apache-2.0",
+  "author": "J. Alex Ruble",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/phonegap/phonegap-app-blank/issues"
+    "url": "https://github.com/calamitizer/color-confinement/issues"
   },
-  "homepage": "https://github.com/phonegap/phonegap-app-blank#readme"
+  "homepage": "https://github.com/calamitizer/color-confinement#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-material": "^1.1.0-rc.5",
+    "angular-route": "^1.5.8",
+    "bluebird": "^3.4.1"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.4",
+    "run-sequence": "^1.2.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
 }
