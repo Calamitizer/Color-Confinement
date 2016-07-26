@@ -26,7 +26,7 @@ var cf = {
     },
     xml: {
         src: [
-            'src/**/*.xml'
+            'src/pre-config.xml'
         ]
     },
     css: {
@@ -55,6 +55,7 @@ gulp.task('html', function() {
 gulp.task('xml', function() {
     gulp
         .src(cf.xml.src)
+        .pipe(rename({basename: 'config'}))
         .pipe(gulp.dest(cf.dest));
 });
 
