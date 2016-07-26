@@ -24,6 +24,11 @@ var cf = {
             'src/**/*.html'
         ]
     },
+    xml: {
+        src: [
+            'src/**/*.xml'
+        ]
+    },
     css: {
         src: [
             'src/**/*.css'
@@ -44,6 +49,12 @@ gulp.task('clean', function() {
 gulp.task('html', function() {
     gulp
         .src(cf.html.src)
+        .pipe(gulp.dest(cf.dest));
+});
+
+gulp.task('xml', function() {
+    gulp
+        .src(cf.xml.src)
         .pipe(gulp.dest(cf.dest));
 });
 
@@ -75,6 +86,7 @@ gulp.task('js', function() {
 gulp.task('build', function() {
     var tasks = [
         'html',
+        'xml',
         'css',
         'js'
     ];
