@@ -26,7 +26,7 @@ var cf = {
     },
     xml: {
         src: [
-            'src/pre-config.xml'
+            'src/precf.xml'
         ]
     },
     css: {
