@@ -1,4 +1,4 @@
-//(function() {
+(function() {
     'use strict';
 
     var app = {
@@ -10,6 +10,7 @@
         },
         onDeviceReady: function() {
             angular.element(document).ready(function() {
+                console.log('bootstrapping');
                 angular.bootstrap(document);
             })
         }
@@ -77,4 +78,4 @@
     }
 
     app.initialize();
-//}());
+}());
