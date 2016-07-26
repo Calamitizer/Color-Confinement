@@ -34,7 +34,7 @@ var cf = {
             'src/**/*.css'
         ]
     },
-    dest: 'www/'
+    dest: 'dist/'
 };
 
 gulp.task('clean', function() {
