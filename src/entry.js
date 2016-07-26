@@ -1,4 +1,4 @@
-(function() {
+//(function() {
     'use strict';
 
     var app = {
@@ -77,4 +77,4 @@
     }
 
     app.initialize();
-}());
+//}());
