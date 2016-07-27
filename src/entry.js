@@ -52,7 +52,7 @@
     function routeConfig($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: '/views/main.html',
+                templateUrl: 'views/main.html',
                 controller: 'FrameCtrl',
                 controllerAs: 'frameCtrl'
             })
