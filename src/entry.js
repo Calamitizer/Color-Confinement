@@ -11,7 +11,7 @@
         onDeviceReady: function() {
             angular.element(document).ready(function() {
                 console.log('bootstrapping');
-                angular.bootstrap(document);
+                angular.bootstrap(document,['cc']);
             })
         }
     };
