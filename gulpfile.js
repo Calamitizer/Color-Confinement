@@ -70,7 +70,7 @@ gulp.task('css', function() {
 gulp.task('js', function() {
     var b = browserify({
         entries: 'src/entry.js',
-        debug: true
+        debug: false
     });
     return b
         .bundle()
