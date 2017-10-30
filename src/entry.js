@@ -58,8 +58,8 @@
         $routeProvider
             .when('/', {
                 templateUrl: 'views/main.html',
-                controller: 'FrameCtrl',
-                controllerAs: 'frameCtrl'
+                controller: 'GameCtrl',
+                controllerAs: 'gameCtrl'
             })
             .otherwise({
                 redirectTo: '/'
@@ -72,17 +72,27 @@
      ***********************************************************/
 
     angular
-        .module('cc.view', []);
+        .module('cc.view', [
+            'cc.puzzle'
+        ]);
 
     angular
         .module('cc.view')
-        .controller('FrameCtrl', FrameCtrl);
+        .controller('GameCtrl', GameCtrl);
 
-    FrameCtrl.$inject = [];
+    GameCtrl.$inject = [
+        'boardFactory'
+    ];
 
-    function FrameCtrl() {
-        var frameCtrl = this;
-        frameCtrl.tagline = 'foo!';
+    function GameCtrl(boardFactory) {
+        var gameCtrl = this;
+
+        gameCtrl.tagline = 'foo!';
+        gameCtrl.boardParams = {
+            size: 4
+        };
+
+        gameCtrl.board = boardFactory.build(gameCtrl.boardParams);
     }
 
 
@@ -102,10 +112,6 @@
         'addMatch',
         //'puzzleData'
     ];
-
-
-
-
 
     function tileFactory(addMatch) {
         var Tile = function(params) {
@@ -132,6 +138,64 @@
         return {
             build: build
         };
+    }
+
+    angular
+        .module('cc.puzzle')
+        .factory('boardFactory', boardFactory);
+
+    boardFactory.$inject = [];
+
+    function boardFactory() {
+        var Board = function(params) {
+            this.size = params.size;
+            this.cells = this.empty();
+        };
+
+        Board.prototype.empty = function() {
+            var cells = [];
+
+            for (var x = 0; x < this.size; x++) {
+                var row = [];
+                cells.push(row);
+
+                for (var y = 0; y < this.size; y++) {
+                    row.push(null);
+                }
+            }
+
+            return cells;
+        };
+
+        var build = function(params) {
+            return new Board(params);
+        };
+
+    }
+
+    angular
+        .module('cc.puzzle')
+        .directive('ccBoard', ccBoard);
+
+    ccBoard.$inject = [];
+
+    function ccBoard() {
+        var BoardCtrl = function() {
+            /* */
+        };
+
+        var dDO = {
+            restrict: 'E',
+            scope: {},
+            bindToController: {
+                board: '='
+            },
+            controller: BoardCtrl,
+            controllerAs: 'boardCtrl',
+            templateUrl: 'puzzle/cc-board.template.html'
+        };
+
+        return dDO;
     }
 
     /*******************************************************
